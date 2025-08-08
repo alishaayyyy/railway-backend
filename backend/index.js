@@ -43,8 +43,12 @@ import AuthRouter from './Routers/AuthRouter.js'
 
 dotenv.config();
 const app = express();
-
-app.use(cors());
+app.use(cors({
+  origin: 'https://miss-l1zw.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+}));
 app.use(express.json());
 
 // Mount the route here
