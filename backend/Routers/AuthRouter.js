@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import User from "../Models/user.js";
+import {ForgotPassword} from '../Controllers/AuthControllers.js'
 dotenv.config();
 
 const router = express.Router();
@@ -60,5 +61,7 @@ router.post("/login", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
+
+router.post("/forgot-password", ForgotPassword);
 
 export default router;
