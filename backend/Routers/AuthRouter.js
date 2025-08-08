@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import User from "../Models/user.js";
 import {ForgotPassword} from '../Controllers/AuthControllers.js'
+import ResetPassword from '../Controllers/AuthControllers.js'
 dotenv.config();
 
 const router = express.Router();
@@ -63,5 +64,6 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/forgot-password", ForgotPassword);
+router.post('/reset-password/:token', ResetPassword);
 
 export default router;

@@ -134,7 +134,7 @@ export const ForgotPassword = async (req, res) => {
       html: `
         <p>Hello ${user.name || "User"},</p>
         <p>Click the link below to reset your password:</p>
-       <a href="${process.env.FrontendLink}reset-password/${token}" target="_blank">
+       <a href="${process.env.FrontendLink}/reset-password/${token}" target="_blank">
   Reset Password
 </a>
         <p>This link will expire in 15 minutes.</p>
